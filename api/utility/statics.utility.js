@@ -10,7 +10,7 @@ const Words = require('../models/words.model');
 module.exports.statics = {
     customers: ['userId', 'firstName', 'lastName', 'companyName', 'email', 'phone', 'countryCode',
         'address', 'subscribed', 'subscriptionId', 'lifetimeValue', 'creationDate', 'closedDate',
-        'taxId', 'hris'],
+        'taxId', 'hris','updateDate'],
     organizations: ['name', 'customerId', 'poc', 'size', 'industry', 'annualRevenue', 'region',
         'state'],
     subscriptions: ['subscriptionName', 'subscriptionType', 'customerId', 'startDate', 'endDate',
@@ -58,7 +58,7 @@ module.exports.statics = {
         surveys: (a) => { return new Surveys(a); },
         surveysubjects: (a) => { return new SurveySubjects(a); },
         users: (a) => { return new Users(a); },
-        wordbanks: (a) => { return new WordBanks(a) },
-        words: (a) => { return new Words(a) }
+        wordbanks: (a) => { return new WordBanks(a);},
+        words: (a) => { return new Words(a);}
     }
 };

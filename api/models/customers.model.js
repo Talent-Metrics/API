@@ -30,6 +30,7 @@ const CustomersSchema = mongoose.Schema({
     },
     lifetimeValue : Number,
     creationDate : Date,
+    updateDate : Date,
     closedDate : Date,
     taxId: Number,
     hris: String

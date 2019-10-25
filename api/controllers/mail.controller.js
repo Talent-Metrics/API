@@ -3,7 +3,7 @@ const apiUrl = process.env.API_URL + '/survey/';
 const webUrl = process.env.WEB_URL + '/survey/';
 
 const outlookTransporter = nodemailer.createTransport({
-    host: 'smtp.office365.com',
+    host: process.env.EMAIL_HOST,
     port: 587,
     secure: false,
     auth: {

@@ -3,10 +3,16 @@ const mongoose = require('mongoose');
 const ObjectId = mongoose.Schema.ObjectId;
 const statics = require('../utility/statics.utility').statics;
 
+
 module.exports.getAll = (req, res) => {
     (async () => {
-        const awaitBuilder = await Customers.find();
-        res.json(awaitBuilder);
+        await Customers.find({}, (err, ret) => {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(ret);
+            }
+        });
     })();
 };
 

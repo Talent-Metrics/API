@@ -1,12 +1,19 @@
 const Organizations = require('../models/organizations.model');
 const statics = require('../utility/statics.utility').statics;
 
+
 module.exports.getAll = (req, res) => {
     (async () => {
-        const awaitBuilder = await Organizations.find();
-        res.json(awaitBuilder);
+        await Organizations.find({}, (err, ret) => {
+            if (err) {
+                res.send(err);
+            } else {
+                res.json(ret);
+            }
+        });
     })();
 };
+
 
 module.exports.getOne = (req, res) => {
     const id = req.params.id;
