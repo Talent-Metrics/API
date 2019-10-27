@@ -23,6 +23,7 @@ module.exports = (app) => {
         app.get('/api/organizations', ctrlOrganizations.getAll);
         app.get('/api/organizations/id/:id', ctrlOrganizations.getOne);
         app.get('/api/organizations/customer/:id', ctrlOrganizations.getAllByCustomerId);
+        app.get('/api/organizations/reference', ctrlOrganizations.getReference);
 
         // SUBSCRIPTIONS
         app.get('/api/subscriptions', ctrlSubscriptions.getAll);

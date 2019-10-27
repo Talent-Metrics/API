@@ -1,4 +1,5 @@
 const Organizations = require('../models/organizations.model');
+const OrganizationReference = require('../models/organization.reference.model');
 const statics = require('../utility/statics.utility').statics;
 
 
@@ -13,7 +14,6 @@ module.exports.getAll = (req, res) => {
         });
     })();
 };
-
 
 module.exports.getOne = (req, res) => {
     const id = req.params.id;
@@ -110,6 +110,20 @@ module.exports.deleteOne = (req, res) => {
             } else {
                 res.json(ret);
             }
+        });
+    })();
+};
+
+module.exports.getReference = (req, res) => {
+    (async () => {
+        await OrganizationReference.find({})
+        .limit(1)
+        .then(response => 
+            res.json(response)
+        )
+        .catch(err => {
+            console.log(err);
+            res.send(err);
         });
     })();
 };
