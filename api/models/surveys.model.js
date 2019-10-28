@@ -5,13 +5,9 @@ const SurveysSchema = mongoose.Schema({
     name : String,
     customerId: ObjectId,
     organizationId: ObjectId,
-    wordBankId: ObjectId
-    // surveys : [
-    //     {
-    //         type: ObjectId,
-    //         ref: 'SurveySubjects'
-    //     }
-    // ]
+    wordBankId: ObjectId,
+    completed: number,
+    subjects: number
 });
 
 const Surveys = mongoose.model('Surveys', SurveysSchema);
