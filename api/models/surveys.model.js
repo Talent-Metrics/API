@@ -6,8 +6,8 @@ const SurveysSchema = mongoose.Schema({
     customerId: ObjectId,
     organizationId: ObjectId,
     wordBankId: ObjectId,
-    completed: number,
-    subjects: number
+    completed: Number,
+    subjects: Number
 });
 
 const Surveys = mongoose.model('Surveys', SurveysSchema);
