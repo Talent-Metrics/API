@@ -28,7 +28,7 @@ const SurveySubjectsSchema = mongoose.Schema({
         veteranStatus : Boolean,
         disabilityStatus : Boolean,
         educationLevel : Number,
-        manager : ObjectId
+        manager : String
     },
     categories: {
         category1 : Array,
