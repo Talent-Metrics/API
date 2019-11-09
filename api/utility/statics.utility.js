@@ -8,7 +8,7 @@ const WordBanks = require('../models/wordBanks.model');
 const Words = require('../models/words.model');
 
 module.exports.statics = {
-    customers: ['userId', 'firstName', 'lastName', 'companyName', 'email', 'phone', 'countryCode',
+    customers: ['firstName', 'lastName', 'companyName', 'email', 'phone', 'countryCode',
         'address', 'subscribed', 'subscriptionId', 'lifetimeValue', 'creationDate', 'closedDate',
         'taxId', 'hris','updateDate'],
     organizations: ['name', 'customerId', 'poc', 'size', 'industry', 'annualRevenue', 'region',
