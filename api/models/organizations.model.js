@@ -3,7 +3,10 @@ const ObjectId = mongoose.Schema.ObjectId;
 
 const OrganizationSchema = mongoose.Schema({
     name: String,
-    customerId: ObjectId,
+    customerId: {
+        type: ObjectId,
+        required: false
+    },
     poc: String,
     size: Number,
     industry: String,
