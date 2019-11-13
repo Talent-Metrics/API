@@ -75,7 +75,7 @@ module.exports.updateOne = (req, res) => {
     const postObject = {};
     const requiredProperties = statics.surveys;
     for (let prop in body) {
-        if (!~requiredProperties.indexOf(prop)) {
+        if (!~requiredProperties.indexOf(prop) && prop !== '__v') {
             res.status(500).send({"errorMsg": "Body contained a property not allowed"});
             return;
         }

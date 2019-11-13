@@ -15,7 +15,7 @@ module.exports.statics = {
         'state'],
     subscriptions: ['subscriptionName', 'subscriptionType', 'customerId', 'startDate', 'endDate',
         'surveyCount', 'maxSurveys', 'autoRenew'],
-    surveys: ['name', 'customerId', 'organizationId', 'wordBankId', 'completed', 'subjects'],
+    surveys: ['_id','name', 'customerId', 'organizationId', 'wordBankId', 'completed', 'subjects'],
     surveysubjects: [
         '_id',
         'customerId',
