@@ -18,7 +18,8 @@ const SurveySubjectsSchema = mongoose.Schema({
         email : String,
         positionTitle : String,
         employeeClass : String,
-        dob : Date,
+        // dob : Date,
+        age: Number,
         department : String,
         division : String,
         location : String,
@@ -28,14 +29,17 @@ const SurveySubjectsSchema = mongoose.Schema({
         veteranStatus : Boolean,
         disabilityStatus : Boolean,
         educationLevel : Number,
-        manager : String
+        manager : String,
+        managerEmail : String
     },
     categories: {
         category1 : Array,
         category2 : Array,
         category3 : Array,
         category4 : Array,
-        category5 : Array
+        category5 : Array,
+        category6 : Array,
+        category7 : Array
     }
 }, {
     collection: 'survey_subjects'

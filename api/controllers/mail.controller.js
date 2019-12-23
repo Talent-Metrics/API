@@ -10,7 +10,7 @@ const outlookTransporter = nodemailer.createTransport({
         user: process.env.EMAIL_USERNAME,
         pass: process.env.EMAIL_PW
     }
-})
+});
 
 // const mailOptions = {
 //     from: 'aaron@thewebfactory.io',

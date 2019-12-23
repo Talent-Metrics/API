@@ -28,7 +28,7 @@ module.exports.getDefault = (req, res) => {
         });
         res.json(awaitBuilder);
     })();
-}
+};
 
 module.exports.getAllByCustomerId = (req, res) => {
     const id = req.params.id;

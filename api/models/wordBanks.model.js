@@ -3,7 +3,6 @@ const ObjectId = mongoose.Schema.ObjectId;
 
 const WordBanksSchema = mongoose.Schema({
     name : String,
-    customerId : ObjectId,
     description : String,
     words : []
 }, {

@@ -25,7 +25,8 @@ module.exports.statics = {
         'organizationId',
         'positionTitle',
         'employeeClass',
-        'dob',
+        // 'dob',
+        'age',
         'department',
         'division',
         'location',
@@ -46,10 +47,12 @@ module.exports.statics = {
         'category2',
         'category3',
         'category4',
-        'category5'
+        'category5',
+        'category6',
+        'category7'
     ],
     users: ['username', 'password', 'customerId', 'lockedOut', 'failedAttempts'],
-    wordbanks: ['name', 'description', 'customerId', 'words'],
+    wordbanks: ['name', 'description', 'words'],
     words: ['name', 'definition', 'value', 'default', 'disabled', 'customerId', 'wordBankId'],
     postObj: {
         customers: (a) => { return new Customers(a); },

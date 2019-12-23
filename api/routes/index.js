@@ -51,7 +51,6 @@ module.exports = (app) => {
         // WORD BANKS
         app.get('/api/wordbanks', ctrlWordBank.getAll);
         app.get('/api/wordbanks/id/:id', ctrlWordBank.getOne);
-        app.get('/api/wordbanks/customer/:id', ctrlWordBank.getAllByCustomerId);
         app.get('/api/wordbanks/default', ctrlWordBank.getDefault);
 
         // WORDS
