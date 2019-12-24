@@ -1,4 +1,3 @@
 api/controllers/.env
 node_modules
 .env
-server/db/db.config.js
