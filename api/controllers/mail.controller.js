@@ -1,48 +1,28 @@
 const nodemailer = require('nodemailer');
-const apiUrl = process.env.API_URL + '/survey/';
-const webUrl = process.env.WEB_URL + '/survey/';
+const surveyUrl = process.env.WEB_URL + '/survey/';
 
 const outlookTransporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     auth: {
         user: process.env.EMAIL_USERNAME,
         pass: process.env.EMAIL_PW
     }
 });
 
-// const mailOptions = {
-//     from: 'aaron@thewebfactory.io',
-//     to: 'aaron@thewebfactory.io',
-//     subject: 'Sending E-mail From TalentMetrics',
-//     text: 'That was so easy!'
-// }
-
-function mailOptions(to) {
-    return {
-        from: process.env.EMAIL_NAME,
-        to: to,
-        subject: 'Sending E-mail From TalentMetrics',
-        text: 'That was so easy!',
-        html: `
-            <h1>Check this out in html</h1>
-            <p>it works on multi-line, too</p>
-        `
-    }
-}
 function surveyNotification(to, id, name) {
-    console.log(process.env);
+    //console.log(process.env);
     return {
         from: process.env.EMAIL_NAME,
         to: to,
-        subject: 'Please complete your TalentMetrics survey',
+        subject: 'Please complete your Talent-metrics survey',
         attachments: [{
-            filename: 'tmLogo.svg',
-            path: __dirname + '/tmLogo.svg',
-            cid: 'tmLogo'
+            filename: 'logo.svg',
+            path: __dirname + '/logo.svg',
+            cid: 'logo'
         }],
-        text: 'That was so easy!',
+        text: `Your survey is available at ${ surveyUrl + id }`,
         html: `
             <div style="padding: 24px; height: 450px; width: 500px;">
                 <div style="
@@ -53,7 +33,7 @@ function surveyNotification(to, id, name) {
                 width: 75%;
                 text-align: center;
                 ">
-                <img src="cid:tmLogo" alt="Talent Metrics logo" style="height: 125px">
+                <img src="cid:logo" alt="Talent Metrics logo" style="height: 60px; width:109px">
                 <br>
                 <br>
                 <section style="text-align: justify;">
@@ -62,7 +42,7 @@ function surveyNotification(to, id, name) {
                 </section>
                 <br>
                 <a
-                    href="${ webUrl + id }"
+                    href="${ surveyUrl + id }"
                     style="
                     font-family: Arial, Helvetica, sans-serif;
                     font-weight: lighter;
@@ -78,18 +58,11 @@ function surveyNotification(to, id, name) {
                     background-color: #fff;
                 ">Start Survey</a>
                 </div>
-            </div>
-        `
-    }
+            </div>`
+    };
 }
 
-// transporter.sendMail(mailOptions, function(error, info) {
-//     if (error) {
-//         console.log(error);
-//     } else {
-//         console.log('Email sent: ', info.response);
-//     }
-// });
+
 
 module.exports.mail = (req, res) => {
     const personalInfo = req.body.personalInfo;
