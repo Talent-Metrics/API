@@ -1,5 +1,6 @@
 const nodemailer = require('nodemailer');
 const surveyUrl = process.env.WEB_URL + '/survey/';
+//const transport = require('SMTPTransport');
 
 const outlookTransporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
@@ -9,7 +10,8 @@ const outlookTransporter = nodemailer.createTransport({
         user: process.env.EMAIL_USERNAME,
         pass: process.env.EMAIL_PW
     }
-});
+}
+);
 
 function surveyNotification(to, id, name) {
     //console.log(process.env);
@@ -62,8 +64,6 @@ function surveyNotification(to, id, name) {
     };
 }
 
-
-
 module.exports.mail = (req, res) => {
     const personalInfo = req.body.personalInfo;
     const surveyInfo = req.body.surveyInfo;
@@ -79,4 +79,4 @@ module.exports.mail = (req, res) => {
             res.json(info);
         }
     });
-}
+};
