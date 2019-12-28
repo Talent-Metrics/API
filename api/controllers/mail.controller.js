@@ -1,6 +1,5 @@
 const nodemailer = require('nodemailer');
 const surveyUrl = process.env.WEB_URL + '/survey/';
-//const transport = require('SMTPTransport');
 
 const outlookTransporter = nodemailer.createTransport({
     host: process.env.EMAIL_HOST,
