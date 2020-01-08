@@ -18,7 +18,6 @@ const SurveySubjectsSchema = mongoose.Schema({
         email : String,
         positionTitle : String,
         employeeClass : String,
-        // dob : Date,
         age: Number,
         department : String,
         division : String,
@@ -30,7 +29,8 @@ const SurveySubjectsSchema = mongoose.Schema({
         disabilityStatus : Boolean,
         educationLevel : Number,
         manager : String,
-        managerEmail : String
+        managerEmail : String,
+        performance: Number
     },
     categories: {
         category1 : Array,
