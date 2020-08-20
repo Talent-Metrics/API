@@ -40,6 +40,8 @@ function surveyNotification(to, id, name) {
                 <section style="text-align: justify;">
                     <p>Hi, ${ name }</p>
                     <p>You have been selected to participate in a short survey regarding the culture within your organization. If you would, please take a few moments and use the unique link below, update any incorrect personal information, then complete the short survey.</p>
+                    <p>This assessment is best taken on a desktop computer or laptop, and not a mobile device.</p>
+                    <p>If you have any issues, please contact support at survey@talent-metrics.com</p>
                 </section>
                 <br>
                 <a
